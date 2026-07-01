@@ -6,8 +6,8 @@ const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1]
 const VP = { once: true, margin: '-60px' }
 
 const iconRow = {
-  hidden: { opacity: 0, x: -16 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.55, ease: EASE } },
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 90, damping: 20 } },
 }
 
 export default function Contact() {
@@ -26,13 +26,14 @@ export default function Contact() {
             viewport={VP}
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } } }}
           >
-            <motion.span
+            <motion.div
               variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-              className="hidden sm:inline-flex items-center gap-2 text-terra-dark text-xs font-bold tracking-[0.2em] uppercase mb-5"
+              className="hidden sm:flex items-center gap-3 mb-5"
             >
-              <span className="w-6 h-0.5 bg-terra inline-block" />
-              {c.eyebrow}
-            </motion.span>
+              <span className="font-serif text-ink/25 text-[0.7rem] tracking-widest tabular-nums">05</span>
+              <span className="w-5 h-px bg-terra/60 inline-block flex-none" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-terra-dark">{c.eyebrow}</span>
+            </motion.div>
             <motion.h2
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE } } }}
               className="font-serif text-[clamp(2rem,4vw,3rem)] text-ink mb-3"
@@ -111,10 +112,10 @@ export default function Contact() {
 
           {/* Right — image slides in from right */}
           <motion.div
-            initial={{ opacity: 0, x: 24, filter: 'blur(6px)' }}
-            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, x: 44 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={VP}
-            transition={{ duration: 0.8, ease: EASE }}
+            transition={{ type: 'spring', stiffness: 80, damping: 18, mass: 0.9 }}
             className="overflow-hidden rounded-2xl shadow-md"
           >
             <motion.img

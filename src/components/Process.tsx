@@ -15,15 +15,16 @@ export default function Nutrition() {
 
           {/* Left — text slides in */}
           <motion.div
-            initial={{ opacity: 0, x: -24, filter: 'blur(6px)' }}
-            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, x: -44 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={VP}
-            transition={{ duration: 0.8, ease: EASE }}
+            transition={{ type: 'spring', stiffness: 80, damping: 18, mass: 0.9 }}
           >
-            <span className="hidden sm:inline-flex items-center gap-2 text-[#F0B98C] text-xs font-bold tracking-[0.2em] uppercase mb-5">
-              <span className="w-6 h-0.5 bg-terra inline-block" />
-              {n.eyebrow}
-            </span>
+            <div className="hidden sm:flex items-center gap-3 mb-5">
+              <span className="font-serif text-cream/20 text-[0.7rem] tracking-widest tabular-nums">03</span>
+              <span className="w-5 h-px bg-terra/60 inline-block flex-none" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#F0B98C]">{n.eyebrow}</span>
+            </div>
             <h2 className="font-serif text-[clamp(2rem,4vw,2.8rem)] text-cream mb-4">
               {n.h2}
             </h2>
@@ -33,10 +34,10 @@ export default function Nutrition() {
           {/* Right — table with stagger rows */}
           <motion.div
             className="rounded-2xl overflow-hidden border border-white/12"
-            initial={{ opacity: 0, x: 24, filter: 'blur(6px)' }}
-            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, x: 44 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={VP}
-            transition={{ duration: 0.8, ease: EASE, delay: 0.08 }}
+            transition={{ type: 'spring', stiffness: 80, damping: 18, mass: 0.9, delay: 0.08 }}
           >
             <div className="flex justify-between items-center px-6 py-4 bg-terra text-white">
               <span className="font-serif text-base">{n.tableH1}</span>

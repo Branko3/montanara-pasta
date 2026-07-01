@@ -12,10 +12,10 @@ export default function B2B() {
     <section id="b2b" className="py-28 bg-cream-2">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, scale: 0.97, y: 20, filter: 'blur(8px)' }}
-          whileInView={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, scale: 0.95, y: 40 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={VP}
-          transition={{ duration: 0.85, ease: EASE }}
+          transition={{ type: 'spring', stiffness: 75, damping: 18, mass: 1 }}
           className="relative rounded-3xl overflow-hidden p-14 md:p-16"
           style={{ background: 'linear-gradient(135deg, #D96A2B, #B5302A)' }}
         >
@@ -36,16 +36,17 @@ export default function B2B() {
             viewport={VP}
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } } }}
           >
-            <motion.span
+            <motion.div
               variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-              className="hidden sm:inline-flex items-center gap-2 text-white/70 text-xs font-bold tracking-[0.2em] uppercase mb-5"
+              className="hidden sm:flex items-center gap-3 mb-5"
             >
-              <span className="w-6 h-0.5 bg-white/50 inline-block" />
-              {b2b.eyebrow}
-            </motion.span>
+              <span className="font-serif text-white/20 text-[0.7rem] tracking-widest tabular-nums">04</span>
+              <span className="w-5 h-px bg-white/40 inline-block flex-none" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-white/70">{b2b.eyebrow}</span>
+            </motion.div>
 
             <motion.h2
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE } } }}
+              variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 90, damping: 20 } } }}
               className="font-serif text-[clamp(2rem,4vw,2.9rem)] text-white mb-4"
             >
               {b2b.h2}
@@ -65,7 +66,7 @@ export default function B2B() {
               {b2b.points.map((pt) => (
                 <motion.div
                   key={pt.value}
-                  variants={{ hidden: { opacity: 0, y: 16, scale: 0.9 }, visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4 } } }}
+                  variants={{ hidden: { opacity: 0, y: 20, scale: 0.9 }, visible: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 100, damping: 20 } } }}
                 >
                   <p className="font-serif text-2xl font-semibold text-white">{pt.value}</p>
                   <p className="text-white/75 text-sm">{pt.label}</p>

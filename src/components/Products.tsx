@@ -10,8 +10,8 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
 }
 const fadeUp = {
-  hidden: { opacity: 0, y: 16, filter: 'blur(4px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.65, ease: EASE } },
+  hidden: { opacity: 0, y: 32 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 90, damping: 20 } },
 }
 
 export default function Products() {
@@ -30,10 +30,11 @@ export default function Products() {
           viewport={VP}
           variants={staggerContainer}
         >
-          <motion.span variants={fadeUp} className="hidden sm:inline-flex items-center gap-2 text-terra-dark text-xs font-bold tracking-[0.2em] uppercase mb-5">
-            <span className="w-6 h-0.5 bg-terra inline-block" />
-            {p.eyebrow}
-          </motion.span>
+          <motion.div variants={fadeUp} className="hidden sm:flex items-center gap-3 mb-5">
+            <span className="font-serif text-ink/25 text-[0.7rem] tracking-widest tabular-nums">02</span>
+            <span className="w-5 h-px bg-terra/60 inline-block flex-none" />
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-terra-dark">{p.eyebrow}</span>
+          </motion.div>
           <motion.h2 variants={fadeUp} className="font-serif text-[clamp(2rem,4vw,3rem)] text-ink mb-4">
             {p.h2}
           </motion.h2>
@@ -42,10 +43,10 @@ export default function Products() {
 
         {/* Featured — Spaghetti */}
         <motion.div
-          initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
-          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={VP}
-          transition={{ duration: 0.8, ease: EASE }}
+          transition={{ type: 'spring', stiffness: 80, damping: 18, mass: 0.9 }}
           className="bg-white rounded-2xl overflow-hidden shadow-sm border border-ink/8 mb-8 grid md:grid-cols-[1.1fr_1fr]"
         >
           {/* Visual — cream background with logo watermark */}
@@ -75,10 +76,10 @@ export default function Products() {
 
         {/* Tagliatelle intro */}
         <motion.div
-          initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
-          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={VP}
-          transition={{ duration: 0.8, ease: EASE }}
+          transition={{ type: 'spring', stiffness: 80, damping: 18, mass: 0.9 }}
           className="grid md:grid-cols-[1.1fr_0.9fr] gap-10 items-center mb-8"
         >
           <div className="overflow-hidden rounded-2xl shadow-sm">
