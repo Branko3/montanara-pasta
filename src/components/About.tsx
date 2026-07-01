@@ -16,10 +16,10 @@ export default function About() {
           {/* Left — image slides in from left */}
           <motion.div
             className="relative"
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={VP}
-            transition={{ duration: 0.9, ease: EASE }}
+            transition={{ duration: 0.7, ease: EASE }}
           >
             <img
               src="/img-story.jpeg"

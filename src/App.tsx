@@ -13,7 +13,7 @@ function App() {
     <LanguageProvider>
       {/* Subtle grain texture overlay — adds tactile depth */}
       <div
-        className="grain-overlay fixed inset-0 pointer-events-none z-[9999] opacity-[0.022] mix-blend-multiply"
+        className="grain-overlay fixed inset-0 pointer-events-none z-[9999] opacity-[0.03]"
         aria-hidden
       />
       <div className="min-h-screen bg-cream">

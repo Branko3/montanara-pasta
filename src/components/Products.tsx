@@ -10,7 +10,7 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
 }
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 18 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
 }
 
@@ -42,7 +42,7 @@ export default function Products() {
 
         {/* Featured — Spaghetti */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VP}
           transition={{ duration: 0.75, ease: EASE }}
@@ -75,7 +75,7 @@ export default function Products() {
 
         {/* Tagliatelle intro */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={VP}
           transition={{ duration: 0.75, ease: EASE }}

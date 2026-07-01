@@ -20,17 +20,13 @@ export default function B2B() {
           style={{ background: 'linear-gradient(135deg, #D96A2B, #B5302A)' }}
         >
           {/* Decorative circles */}
-          <motion.div
+          <div
             className="absolute w-96 h-96 rounded-full pointer-events-none"
             style={{ background: 'rgba(255,255,255,0.07)', top: '-100px', right: '-80px' }}
-            animate={{ scale: [1, 1.08, 1] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
           />
-          <motion.div
+          <div
             className="absolute w-56 h-56 rounded-full pointer-events-none"
             style={{ background: 'rgba(255,255,255,0.06)', bottom: '-70px', left: '-40px' }}
-            animate={{ scale: [1, 1.12, 1] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
           />
 
           <motion.div
