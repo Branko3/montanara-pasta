@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useLanguage } from '../context/LanguageContext'
 
 const TAG_BG = ['#4A6B2A', '#7E2040', '#2A2A2E']
-const EASE: [number, number, number, number] = [0.215, 0.61, 0.355, 1]
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1]
 const VP = { once: true, margin: '-60px' }
 
 const staggerContainer = {
@@ -10,8 +10,8 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
 }
 const fadeUp = {
-  hidden: { opacity: 0, y: 18 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+  hidden: { opacity: 0, y: 16, filter: 'blur(4px)' },
+  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.65, ease: EASE } },
 }
 
 export default function Products() {
@@ -42,10 +42,10 @@ export default function Products() {
 
         {/* Featured — Spaghetti */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={VP}
-          transition={{ duration: 0.75, ease: EASE }}
+          transition={{ duration: 0.8, ease: EASE }}
           className="bg-white rounded-2xl overflow-hidden shadow-sm border border-ink/8 mb-8 grid md:grid-cols-[1.1fr_1fr]"
         >
           {/* Visual — cream background with logo watermark */}
@@ -75,10 +75,10 @@ export default function Products() {
 
         {/* Tagliatelle intro */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={VP}
-          transition={{ duration: 0.75, ease: EASE }}
+          transition={{ duration: 0.8, ease: EASE }}
           className="grid md:grid-cols-[1.1fr_0.9fr] gap-10 items-center mb-8"
         >
           <div className="overflow-hidden rounded-2xl shadow-sm">

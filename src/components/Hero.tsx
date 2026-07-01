@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../context/LanguageContext'
 
-const EASE: [number, number, number, number] = [0.215, 0.61, 0.355, 1]
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 const lineVariants = {
   hidden: { y: '110%' },
   visible: (delay: number) => ({
     y: 0,
-    transition: { duration: 0.85, ease: EASE, delay },
+    transition: { duration: 0.75, ease: EASE, delay },
   }),
 }
 
@@ -108,9 +108,9 @@ export default function Hero() {
 
             {/* Right — hero photo */}
             <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.96 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 1.0, ease: EASE, delay: 0.35 }}
+              initial={{ opacity: 0, x: 28, scale: 0.97, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, x: 0, scale: 1, filter: 'blur(0px)' }}
+              transition={{ duration: 0.9, ease: EASE, delay: 0.28 }}
               className="relative"
             >
               <img

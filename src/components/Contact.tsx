@@ -2,12 +2,12 @@ import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
-const EASE: [number, number, number, number] = [0.215, 0.61, 0.355, 1]
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1]
 const VP = { once: true, margin: '-60px' }
 
 const iconRow = {
-  hidden: { opacity: 0, x: -24 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: EASE } },
+  hidden: { opacity: 0, x: -16 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.55, ease: EASE } },
 }
 
 export default function Contact() {
@@ -111,10 +111,10 @@ export default function Contact() {
 
           {/* Right — image slides in from right */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 24, filter: 'blur(6px)' }}
+            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
             viewport={VP}
-            transition={{ duration: 0.9, ease: EASE }}
+            transition={{ duration: 0.8, ease: EASE }}
             className="overflow-hidden rounded-2xl shadow-md"
           >
             <motion.img

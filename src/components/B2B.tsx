@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../context/LanguageContext'
 
-const EASE: [number, number, number, number] = [0.215, 0.61, 0.355, 1]
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1]
 const VP = { once: true, margin: '-60px' }
 
 export default function B2B() {
@@ -12,10 +12,10 @@ export default function B2B() {
     <section id="b2b" className="py-28 bg-cream-2">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, scale: 0.97, y: 30 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.97, y: 20, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
           viewport={VP}
-          transition={{ duration: 0.8, ease: EASE }}
+          transition={{ duration: 0.85, ease: EASE }}
           className="relative rounded-3xl overflow-hidden p-14 md:p-16"
           style={{ background: 'linear-gradient(135deg, #D96A2B, #B5302A)' }}
         >

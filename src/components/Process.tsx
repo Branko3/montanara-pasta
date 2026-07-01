@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../context/LanguageContext'
 
-const EASE: [number, number, number, number] = [0.215, 0.61, 0.355, 1]
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1]
 const VP = { once: true, margin: '-60px' }
 
 export default function Nutrition() {
@@ -15,10 +15,10 @@ export default function Nutrition() {
 
           {/* Left — text slides in */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -24, filter: 'blur(6px)' }}
+            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
             viewport={VP}
-            transition={{ duration: 0.85, ease: EASE }}
+            transition={{ duration: 0.8, ease: EASE }}
           >
             <span className="hidden sm:inline-flex items-center gap-2 text-[#F0B98C] text-xs font-bold tracking-[0.2em] uppercase mb-5">
               <span className="w-6 h-0.5 bg-terra inline-block" />
@@ -33,10 +33,10 @@ export default function Nutrition() {
           {/* Right — table with stagger rows */}
           <motion.div
             className="rounded-2xl overflow-hidden border border-white/12"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 24, filter: 'blur(6px)' }}
+            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
             viewport={VP}
-            transition={{ duration: 0.85, ease: EASE, delay: 0.1 }}
+            transition={{ duration: 0.8, ease: EASE, delay: 0.08 }}
           >
             <div className="flex justify-between items-center px-6 py-4 bg-terra text-white">
               <span className="font-serif text-base">{n.tableH1}</span>

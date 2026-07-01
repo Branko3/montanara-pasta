@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../context/LanguageContext'
 
-const EASE: [number, number, number, number] = [0.215, 0.61, 0.355, 1]
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1]
 const VP = { once: true, margin: '-80px' }
 
 export default function About() {
@@ -16,10 +16,10 @@ export default function About() {
           {/* Left — image slides in from left */}
           <motion.div
             className="relative"
-            initial={{ opacity: 0, x: -28 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -24, filter: 'blur(6px)' }}
+            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
             viewport={VP}
-            transition={{ duration: 0.7, ease: EASE }}
+            transition={{ duration: 0.8, ease: EASE }}
           >
             <img
               src="/img-story.jpeg"
@@ -45,7 +45,7 @@ export default function About() {
             }}
           >
             <motion.span
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } } }}
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE } } }}
               className="hidden sm:inline-flex items-center gap-2 text-terra-dark text-xs font-bold tracking-[0.2em] uppercase mb-5"
             >
               <span className="w-6 h-0.5 bg-terra inline-block" />
@@ -60,7 +60,7 @@ export default function About() {
             </motion.h2>
 
             <motion.div
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } } }}
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE } } }}
               className="space-y-4 text-ink-soft leading-relaxed"
             >
               <p>
