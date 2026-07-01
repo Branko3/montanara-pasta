@@ -49,13 +49,14 @@ export default function Products() {
           transition={{ type: 'spring', stiffness: 80, damping: 18, mass: 0.9 }}
           className="bg-white rounded-2xl overflow-hidden shadow-sm border border-ink/8 mb-8 grid md:grid-cols-[1.1fr_1fr]"
         >
-          {/* Visual — cream background with logo watermark */}
-          <div
-            className="relative min-h-[280px] md:min-h-[340px] flex items-center justify-center overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #FBF4E9 0%, #EDD89A 100%)' }}
-          >
-            <img src="/logo.png" alt="" className="w-40 opacity-[0.12] select-none" aria-hidden />
-            <div className="absolute inset-0 bg-gradient-to-br from-transparent to-terra/5" />
+          {/* Visual — product photo */}
+          <div className="relative min-h-[280px] md:min-h-[340px] overflow-hidden">
+            <img
+              src="/img-contact.jpeg"
+              alt="Montanara špagete — svježe tijesto"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20" />
           </div>
           <div className="p-10 md:p-12 flex flex-col justify-center">
             <span className="text-xs font-bold tracking-[0.16em] uppercase text-terra-dark mb-2">
