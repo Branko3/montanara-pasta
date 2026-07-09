@@ -23,6 +23,17 @@ export interface B2BPoint {
   label: string
 }
 
+export interface WhyUsItem {
+  icon: string
+  heading: string
+  body: string
+}
+
+export interface HowStep {
+  step: string
+  text: string
+}
+
 export interface Translations {
   nav: {
     story: string
@@ -53,10 +64,14 @@ export interface Translations {
     p2: string
     quote: string
   }
+  whyUs: {
+    items: WhyUsItem[]
+  }
   products: {
     eyebrow: string
     h2: string
     intro: string
+    freshPromise: string
     spKicker: string
     spName: string
     spDesc: string
@@ -80,6 +95,7 @@ export interface Translations {
     points: B2BPoint[]
     cta1: string
     cta2: string
+    ctaWhatsApp: string
   }
   contact: {
     eyebrow: string
@@ -89,8 +105,11 @@ export interface Translations {
     emailLabel: string
     addrLabel: string
     igLabel: string
+    waLabel: string
     addrLine1: string
     addrLine2: string
+    howTitle: string
+    howSteps: HowStep[]
   }
   footer: {
     links: {
@@ -140,10 +159,19 @@ const cnr: Translations = {
     p2: 'Svaka šarža se pravi u malim količinama, pa do vas stiže onoliko svježa koliko i izgleda. Boju ne dobijamo iz bočice. Dolazi iz cvekle, spanaća i crnila sipe, baš onako kako bi je obojila i sama priroda.',
     quote: '„Dobra pašta ne traži mnogo — samo dobre sastojke i da na sto stigne svježa."',
   },
+  whyUs: {
+    items: [
+      { icon: 'Wheat', heading: 'Samo semola i voda', body: 'Bez jaja, bez aditiva, bez konzervansa' },
+      { icon: 'Scale', heading: 'Male serije', body: 'Svaka serija se pravi iznova, isti dan' },
+      { icon: 'Palette', heading: 'Prirodne boje', body: 'Spanać, cvekla i crnilo sipe — ne boje' },
+      { icon: 'Timer', heading: 'Kuhanje za 2–3 min', body: 'Svježe tijesto ne treba čekati' },
+    ],
+  },
   products: {
     eyebrow: 'Asortiman',
     h2: 'Što sve pravimo',
     intro: 'Za sada u ponudi imamo dvije osnovne forme: špagete i taljatele. A taljatele dolaze u tri prirodne boje.',
+    freshPromise: 'Pravimo po narudžbi — uvijek svježe',
     spKicker: 'Klasik',
     spName: 'Špagete',
     spDesc: 'Tanke, svilenkaste i savršeno elastične. Naše svježe špagete kuvaju se za svega 2–3 minuta i lijepo prihvataju svaki sos, od jednostavnog pelata i bosiljka do bogatijih preliva.',
@@ -203,6 +231,7 @@ const cnr: Translations = {
     ],
     cta1: 'Pozovi za ponudu',
     cta2: 'Pošalji upit na e-mail',
+    ctaWhatsApp: 'WhatsApp',
   },
   contact: {
     eyebrow: 'Kontakt',
@@ -212,8 +241,15 @@ const cnr: Translations = {
     emailLabel: 'E-mail',
     addrLabel: 'Adresa',
     igLabel: 'Instagram',
+    waLabel: 'WhatsApp',
     addrLine1: 'Ul. Milana Raičkovića 26',
     addrLine2: 'Podgorica, Crna Gora',
+    howTitle: 'Kako naručiti',
+    howSteps: [
+      { step: '1', text: 'Piši nam na WhatsApp ili nazovi' },
+      { step: '2', text: 'Dogovorimo količinu i termin' },
+      { step: '3', text: 'Svježa pašta stiže do tebe' },
+    ],
   },
   footer: {
     links: {
@@ -263,10 +299,19 @@ const en: Translations = {
     p2: 'Every batch is made in small quantities, so it reaches you as fresh as it looks. The colour doesn\'t come from a bottle. It comes from beetroot, spinach and cuttlefish ink, exactly the way nature would colour it.',
     quote: '"Good pasta doesn\'t ask for much — just good ingredients, and to reach the table fresh."',
   },
+  whyUs: {
+    items: [
+      { icon: 'Wheat', heading: 'Only semola and water', body: 'No eggs, no additives, no preservatives' },
+      { icon: 'Scale', heading: 'Small batches', body: 'Every batch is made fresh, same day' },
+      { icon: 'Palette', heading: 'Natural colours', body: 'Spinach, beetroot, cuttlefish ink — not dyes' },
+      { icon: 'Timer', heading: 'Cooks in 2–3 min', body: "Fresh dough doesn't need long" },
+    ],
+  },
   products: {
     eyebrow: 'Our range',
     h2: 'What we make',
     intro: 'For now we offer two shapes: spaghetti and tagliatelle. And the tagliatelle comes in three natural colours.',
+    freshPromise: 'Made to order — always fresh',
     spKicker: 'Classic',
     spName: 'Spaghetti',
     spDesc: 'Thin, silky and perfectly springy. Our fresh spaghetti cooks in just 2–3 minutes and carries any sauce beautifully, from a simple tomato and basil to richer dressings.',
@@ -326,6 +371,7 @@ const en: Translations = {
     ],
     cta1: 'Call for a quote',
     cta2: 'Send an email',
+    ctaWhatsApp: 'WhatsApp',
   },
   contact: {
     eyebrow: 'Contact',
@@ -335,8 +381,15 @@ const en: Translations = {
     emailLabel: 'Email',
     addrLabel: 'Address',
     igLabel: 'Instagram',
+    waLabel: 'WhatsApp',
     addrLine1: 'Milana Raičkovića 26',
     addrLine2: 'Podgorica, Montenegro',
+    howTitle: 'How to order',
+    howSteps: [
+      { step: '1', text: 'Message us on WhatsApp or call' },
+      { step: '2', text: 'We agree on quantity and delivery' },
+      { step: '3', text: 'Fresh pasta arrives at your door' },
+    ],
   },
   footer: {
     links: {

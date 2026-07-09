@@ -39,6 +39,12 @@ export default function Products() {
             {p.h2}
           </motion.h2>
           <motion.p variants={fadeUp} className="hidden sm:block text-ink-soft text-lg max-w-[55ch]">{p.intro}</motion.p>
+          <motion.div variants={fadeUp} className="flex items-center gap-2 mt-5">
+            <span className="inline-flex items-center gap-2 bg-terra/10 text-terra-dark text-sm font-semibold px-4 py-2 rounded-full border border-terra/20">
+              <span className="w-1.5 h-1.5 rounded-full bg-terra inline-block" />
+              {p.freshPromise}
+            </span>
+          </motion.div>
         </motion.div>
 
         {/* Featured — Spaghetti */}
@@ -52,7 +58,7 @@ export default function Products() {
           {/* Visual — product photo */}
           <div className="relative min-h-[280px] md:min-h-[340px] overflow-hidden">
             <img
-              src="/img-contact.jpeg"
+              src="/img-spaghetti.jpeg"
               alt="Montanara špagete — svježe tijesto"
               className="absolute inset-0 w-full h-full object-cover"
             />

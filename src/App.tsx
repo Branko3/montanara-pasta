@@ -2,6 +2,7 @@ import { LanguageProvider } from './context/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import WhyUs from './components/WhyUs'
 import Products from './components/Products'
 import Nutrition from './components/Process'
 import B2B from './components/B2B'
@@ -21,6 +22,7 @@ function App() {
         <main>
           <Hero />
           <About />
+          <WhyUs />
           <Products />
           <Nutrition />
           <B2B />
