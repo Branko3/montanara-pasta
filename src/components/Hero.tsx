@@ -35,17 +35,17 @@ export default function Hero() {
             </motion.div>
 
             <h1 className="font-serif text-[clamp(4rem,9.5vw,8rem)] text-ink leading-[0.88] -ml-0.5 mb-10">
-              <div className="overflow-hidden pb-2">
+              <div className="overflow-y-hidden pb-2 pr-2 -mr-2">
                 <motion.span className="block" variants={lineVariants} initial="hidden" animate="visible" custom={0.18}>
                   {hero.h1_1}
                 </motion.span>
               </div>
-              <div className="overflow-hidden pb-2">
+              <div className="overflow-y-hidden pb-2 pr-2 -mr-2">
                 <motion.span className="block text-terra italic" variants={lineVariants} initial="hidden" animate="visible" custom={0.34}>
                   {hero.h1_em}
                 </motion.span>
               </div>
-              <div className="overflow-hidden pb-2">
+              <div className="overflow-y-hidden pb-2 pr-2 -mr-2">
                 <motion.span className="block" variants={lineVariants} initial="hidden" animate="visible" custom={0.5}>
                   {hero.h1_3}
                 </motion.span>
